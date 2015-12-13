@@ -20,20 +20,31 @@ public class BenchmarkAnnotationBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         Class<?> beanClass = bean.getClass();
-        if (beanClass.isAnnotationPresent(Benchmark.class)) {
-            return Proxy.newProxyInstance(beanClass.getClassLoader(), beanClass.getInterfaces(), new InvocationHandler() {
-                @Override
-                public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                    System.out.println("**********BENCHMARK************");
-                    long before = System.nanoTime();
-                    Object retVal = method.invoke(bean, args);
-                    long after = System.nanoTime();
-                    System.out.println("Method: "+method.getName()+" was working for "+(after-before));
-                    System.out.println("**********BENCHMARK************");
-                    return retVal;
-                }
-            });
+        Method[] methods = beanClass.getMethods();
+        for (Method method : methods) {
+            if (method.isAnnotationPresent(Benchmark.class)) {
+                return Proxy.newProxyInstance(beanClass.getClassLoader(), beanClass.getInterfaces(), new InvocationHandler() {
+                    @Override
+                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                        Method originalBeanClassMethod = beanClass.getMethod(method.getName(), method.getParameterTypes());
+                        if (originalBeanClassMethod.isAnnotationPresent(Benchmark.class)) {
+                            System.out.println("**********BENCHMARK************");
+                            long before = System.nanoTime();
+                            Object retVal = method.invoke(bean, args);
+                            long after = System.nanoTime();
+                            System.out.println("Method: "+method.getName()+" was working for "+(after-before));
+                            System.out.println("**********BENCHMARK************");
+                            return retVal;
+                        }else {
+                            return method.invoke(bean, args);
+
+                        }
+                    }
+                });
+            }
         }
+
+
         return bean;
     }
 }

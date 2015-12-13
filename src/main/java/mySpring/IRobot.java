@@ -11,7 +11,7 @@ public class IRobot {
     private Cleaner cleaner;
 
     public IRobot() {
-//        System.out.println(speaker.getClass());    // NPE
+        System.out.println(speaker.getClass());
     }
 
     public void cleanRoom(){

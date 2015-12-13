@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="trustMe" class="java.lang.String">
+        <constructor-arg value="Trust Me!!!"/>
+    </bean>
+    <bean id="talkingRobot" class="quoters.TalkingRobotImpl" init-method="talk">
+        <property name="quoters">
+            <list>
+                <ref bean="shakespearQuoter"/>
+                <ref bean="terminatorQuoter"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="terminatorQuoter" class="quoters.TerminatorQuoter">
+        <property name="messages">
+            <list>
+                <value>I'll be back</value>
+                <ref bean="trustMe"/>
+                <value>Astalavista baby</value>
+                <value>Bullshit</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="shakespearQuoter" class="quoters.ShakespearQuoter" lazy-init="true">
+        <property name="message" value="2 B || ! 2 B"/>
+    </bean>
+
+
+</beans>

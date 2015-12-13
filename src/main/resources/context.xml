@@ -3,11 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+    <bean class="quoters.bpp.InjectRandomIntAnnotationBeanPostProcessor"/>
+
+    <bean class="quoters.bpp.BenchmarkAnnotationBeanPostProcessor"/>
+
+    <bean class="quoters.SapServiceImpl"/>
+
 
     <bean id="trustMe" class="java.lang.String">
         <constructor-arg value="Trust Me!!!"/>
     </bean>
-    <bean id="talkingRobot" class="quoters.TalkingRobotImpl" init-method="talk">
+    <bean id="talkingRobot" class="quoters.TalkingRobotImpl">
         <property name="quoters">
             <list>
                 <ref bean="shakespearQuoter"/>

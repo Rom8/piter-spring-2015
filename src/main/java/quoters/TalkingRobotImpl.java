@@ -16,7 +16,7 @@ public class TalkingRobotImpl implements TalkingRobot {
     }
 
     @Override
-//    @PostConstruct
+    @PostConstruct
     public void talk() {
         for (Quoter quoter : quoters) {
             quoter.sayQuote();

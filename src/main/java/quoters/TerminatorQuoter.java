@@ -8,6 +8,7 @@ import java.util.List;
  * Created by Jeka on 14/10/2015.
  */
 
+@Transactional
 public class TerminatorQuoter implements Quoter {
     private List<String> messages;
 

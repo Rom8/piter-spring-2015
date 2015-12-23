@@ -6,6 +6,9 @@
     <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
     <bean class="quoters.bpp.InjectRandomIntAnnotationBeanPostProcessor"/>
 
+    <bean class="quoters.Abc"/>
+
+    <bean class="quoters.bpp.TransactionalAnnotationBeanPostProcessor"/>
     <bean class="quoters.bpp.BenchmarkAnnotationBeanPostProcessor"/>
 
     <bean class="quoters.SapServiceImpl"/>

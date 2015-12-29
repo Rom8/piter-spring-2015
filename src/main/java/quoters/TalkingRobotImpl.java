@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * Created by Jeka on 14/10/2015.
  */
+@Transactional
 public class TalkingRobotImpl implements TalkingRobot {
     private List<Quoter> quoters;
 
@@ -16,7 +17,7 @@ public class TalkingRobotImpl implements TalkingRobot {
     }
 
     @Override
-    @PostConstruct
+    @PostInit
     public void talk() {
         for (Quoter quoter : quoters) {
             quoter.sayQuote();

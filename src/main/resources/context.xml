@@ -6,6 +6,11 @@
     <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
     <bean class="quoters.bpp.InjectRandomIntAnnotationBeanPostProcessor"/>
 
+    <bean class="quoters.PostInitApplicationListener"/>
+
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+    <bean class="quoters.WarningBeanFactoryPostProcessor"/>
+
     <bean class="quoters.Abc"/>
 
     <bean class="quoters.bpp.TransactionalAnnotationBeanPostProcessor"/>
@@ -25,7 +30,7 @@
             </list>
         </property>
     </bean>
-    <bean id="terminatorQuoter" class="quoters.TerminatorQuoter">
+    <bean id="terminatorQuoter" class="quoters.TerminatorQuoter" destroy-method="killAll" scope="prototype">
         <property name="messages">
             <list>
                 <value>I'll be back</value>

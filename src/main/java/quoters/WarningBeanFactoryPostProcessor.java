@@ -17,7 +17,8 @@ public class WarningBeanFactoryPostProcessor implements BeanFactoryPostProcessor
             AbstractBeanDefinition beanDefinition = (AbstractBeanDefinition) beanFactory.getBeanDefinition(name);
             String destroyMethodName = beanDefinition.getDestroyMethodName();
             if (destroyMethodName != null && beanDefinition.isPrototype()) {
-                System.err.println("WARNING ?? ?????!!!");
+                System.err.println("WARNING: bean with scope 'prototype' cannot have destroy method - bean definition name:" +
+                name + ", destroy method name: " + destroyMethodName);
             }
         }
     }

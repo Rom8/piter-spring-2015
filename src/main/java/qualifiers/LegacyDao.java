@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by Jeka on 15/10/2015.
  */
-@Sybase
+@Db(DBType.SYBASE)
 public class LegacyDao implements Dao {
     @Override
     public void save() throws InterruptedException {

@@ -2,6 +2,7 @@ package quoters.bpp;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.stereotype.Component;
 import quoters.Benchmark;
 import quoters.BenchmarkController;
 
@@ -16,6 +17,7 @@ import java.util.Map;
 /**
  * Created by Jeka on 14/10/2015.
  */
+@Component
 public class BenchmarkAnnotationBeanPostProcessor implements BeanPostProcessor {
     private Map<String, Class> beanName2OriginalClass = new HashMap<>();
     private BenchmarkController benchmarkController = new BenchmarkController();

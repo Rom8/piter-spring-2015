@@ -11,5 +11,6 @@ import java.lang.annotation.RetentionPolicy;
 @Qualifier
 @Repository
 @Autowired
-public @interface Mongo {
+public @interface Db {
+    DBType value();
 }

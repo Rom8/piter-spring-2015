@@ -3,6 +3,7 @@ package quoters.bpp;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.cglib.proxy.Enhancer;
+import org.springframework.stereotype.Component;
 import quoters.Transactional;
 
 import java.lang.reflect.InvocationHandler;
@@ -12,6 +13,7 @@ import java.lang.reflect.Proxy;
 /**
  * Created by Jeka on 14/10/2015.
  */
+@Component
 public class TransactionalAnnotationBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {

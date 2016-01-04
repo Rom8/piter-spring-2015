@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class BackupService {
-    @Sybase
+    @Db(DBType.SYBASE)
     private Dao dao;
 
     @Scheduled(cron = "1/3 * * * * ?")

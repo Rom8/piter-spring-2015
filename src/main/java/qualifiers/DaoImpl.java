@@ -1,11 +1,9 @@
 package qualifiers;
 
-import org.springframework.stereotype.Repository;
-
 /**
  * Created by Jeka on 15/10/2015.
  */
-@Mongo
+@Db(DBType.MONGO)
 public class DaoImpl implements Dao {
     @Override
     public void save() throws InterruptedException {

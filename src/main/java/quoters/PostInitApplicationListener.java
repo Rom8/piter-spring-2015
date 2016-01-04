@@ -6,12 +6,14 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 
 /**
  * Created by Jeka on 15/10/2015.
  */
+@Component
 public class PostInitApplicationListener implements ApplicationListener<ContextRefreshedEvent> {
     @Autowired
     private ConfigurableListableBeanFactory factory;

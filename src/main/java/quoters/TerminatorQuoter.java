@@ -1,25 +1,32 @@
 package quoters;
 
 import lombok.*;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PreDestroy;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by Jeka on 14/10/2015.
  */
 
-@DeprecatedClass(T1000.class)
+@Component
+@Transactional
 public class TerminatorQuoter implements Quoter {
+
     private List<String> messages;
 
-
-    public void setMessages(List<String> messages) {
-        this.messages = messages;
+    @Value("${terminator}")
+    public void setMessages(String[] messages) {
+        this.messages = Arrays.asList(messages);
     }
 
-
-    public void killAll(){
+    @PreDestroy
+    public void killAll() {
         System.out.println("You are terminated");
     }
 

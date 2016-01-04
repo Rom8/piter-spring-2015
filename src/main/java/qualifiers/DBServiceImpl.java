@@ -1,6 +1,5 @@
 package qualifiers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -11,11 +10,11 @@ import org.springframework.stereotype.Service;
 @Service
 @EnableScheduling
 public class DBServiceImpl implements DBService {
-    @Mongo
+    @Db(DBType.MONGO)
     private Dao dao;
 
     @Override
-    @Scheduled(cron = "1/2 * * * * ?")
+    @Scheduled(cron = "${scheduling}")
     public void doStuff() throws InterruptedException {
         System.out.println("Working...");
         dao.save();

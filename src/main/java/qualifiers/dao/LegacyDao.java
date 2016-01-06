@@ -1,6 +1,8 @@
-package qualifiers;
+package qualifiers.dao;
 
-import org.springframework.stereotype.Repository;
+import qualifiers.DBType;
+import qualifiers.Db;
+import qualifiers.dao.Dao;
 
 /**
  * Created by Jeka on 15/10/2015.

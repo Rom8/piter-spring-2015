@@ -1,4 +1,4 @@
-package qualifiers;
+package qualifiers.dbservice;
 
 /**
  * Created by Jeka on 15/10/2015.

@@ -1,4 +1,4 @@
-package quoters;
+package quoters.sapService;
 
 /**
  * Created by Jeka on 14/10/2015.

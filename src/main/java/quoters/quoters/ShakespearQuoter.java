@@ -1,9 +1,9 @@
-package quoters;
+package quoters.quoters;
 
 import mySpring.InjectRandomInt;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import quoters.quoters.Quoter;
 
 /**
  * Created by Jeka on 14/10/2015.

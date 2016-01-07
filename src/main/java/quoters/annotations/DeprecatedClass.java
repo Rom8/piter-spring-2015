@@ -1,8 +1,9 @@
-package quoters;
+package quoters.annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Benchmark {
+public @interface DeprecatedClass {
+    Class value();
 }

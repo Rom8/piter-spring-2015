@@ -1,4 +1,6 @@
-package quoters;
+package quoters.quoters;
+
+import quoters.quoters.TerminatorQuoter;
 
 /**
  * Created by Jeka on 15/10/2015.

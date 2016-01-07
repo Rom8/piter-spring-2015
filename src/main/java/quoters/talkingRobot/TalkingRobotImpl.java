@@ -1,10 +1,11 @@
-package quoters;
+package quoters.talkingRobot;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import quoters.quoters.Quoter;
+import quoters.annotations.PostInit;
+import quoters.annotations.Transactional;
 
-import javax.annotation.PostConstruct;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 

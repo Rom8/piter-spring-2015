@@ -1,12 +1,11 @@
-package quoters;
+package quoters.quoters;
 
-import lombok.*;
-import org.springframework.beans.factory.annotation.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import quoters.annotations.Transactional;
+import quoters.quoters.Quoter;
 
 import javax.annotation.PreDestroy;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 

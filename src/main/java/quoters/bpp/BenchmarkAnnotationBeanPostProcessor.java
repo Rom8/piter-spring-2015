@@ -3,8 +3,8 @@ package quoters.bpp;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
-import quoters.Benchmark;
-import quoters.BenchmarkController;
+import quoters.annotations.Benchmark;
+import quoters.mBeans.BenchmarkController;
 
 import javax.management.*;
 import java.lang.management.ManagementFactory;

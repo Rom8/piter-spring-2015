@@ -4,7 +4,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.stereotype.Component;
-import quoters.Transactional;
+import quoters.annotations.Transactional;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

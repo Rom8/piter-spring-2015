@@ -1,4 +1,6 @@
-package quoters;
+package quoters.sapService;
+
+import quoters.annotations.Benchmark;
 
 /**
  * Created by Jeka on 14/10/2015.

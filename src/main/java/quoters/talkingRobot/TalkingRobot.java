@@ -1,4 +1,4 @@
-package quoters;
+package quoters.talkingRobot;
 
 import javax.annotation.PostConstruct;
 

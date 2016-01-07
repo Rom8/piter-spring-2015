@@ -1,4 +1,6 @@
-package quoters;
+package quoters.mBeans;
+
+import quoters.mBeans.BenchmarkControllerMBean;
 
 /**
  * Created by Jeka on 14/10/2015.

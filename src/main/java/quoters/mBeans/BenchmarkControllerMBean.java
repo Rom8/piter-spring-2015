@@ -1,4 +1,4 @@
-package quoters;
+package quoters.mBeans;
 
 /**
  * Created by Jeka on 14/10/2015.

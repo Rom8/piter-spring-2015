@@ -1,9 +1,13 @@
 package neveruseswitch;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import org.springframework.stereotype.Component;
 
+import java.lang.annotation.*;
+
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
+@Component
 public @interface MailCode {
-    int value();
+    String value();
+
 }

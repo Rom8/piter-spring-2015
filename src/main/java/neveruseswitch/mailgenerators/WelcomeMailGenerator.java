@@ -1,12 +1,13 @@
 package neveruseswitch.mailgenerators;
 
+import neveruseswitch.MailCode;
 import neveruseswitch.mailgenerators.MailGenerator;
 import org.springframework.stereotype.Component;
 
 /**
  * Created by Jeka on 15/10/2015.
  */
-@Component("1")
+@MailCode("1")
 public class WelcomeMailGenerator implements MailGenerator {
     @Override
     public String generateHtml() {
